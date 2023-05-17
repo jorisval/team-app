@@ -40,7 +40,7 @@ const LayoutsStyle = createGlobalStyle`
                 position: absolute;
                 z-index: 100;
                 top: 0px;
-                left: calc(8% + 15px);
+                left: calc(4% + 15px);
                 padding-top: 18px;
                 cursor: pointer;
                 transition: all 0.6s ease-in-out;
@@ -119,14 +119,16 @@ const LayoutsStyle = createGlobalStyle`
 
         &__logo {
             margin-right: 0%;
+            margin-left: 4%;
             padding: 20px;
             text-align: center;
             @media (min-width: ${theme.breakpoints.up.medium}) {
                 padding-left: 0;
-                margin-right: 10%;
+                margin-right: 20%;
+                margin-left: 0;
             }
             @media (min-width: ${theme.breakpoints.up.large}) {
-                margin-right: 30%;
+                margin-right: 40%;
             }
             img {
                 width: 80%;
@@ -155,203 +157,24 @@ const LayoutsStyle = createGlobalStyle`
             list-style-type: none;
             margin: 0px;
             padding: 0px;
-
-            .active {
-                a {
-                    border-bottom: 2px solid ${theme.colors.secondary};
-                }
-            }
             }
 
             li {
-            padding: 20px 3%;
+            padding: 20px 4%;
             }
 
             a {
                 text-decoration: none;
-                color: ${theme.colors.primary};
+                color: ${theme.colors.nav};
                 padding: 0 0 0.25rem 0;
-
-                &:hover {
-                    border-bottom: 2px solid ${theme.colors.secondary};
-                }
             }
         }
 
-        &__cart {
-            text-align: center;
+        &__button {
             padding: 17px 0;
-        }
-
-        .bi-cart3 {
-            font-size: 1rem;
-            color: ${theme.colors.primary};
-            cursor: pointer;
-
-            @media (min-width: ${theme.breakpoints.up.xlarge}) {
-            font-size: 1.25rem;
-            }
-        }
-
-        .cart {
-            position: absolute;
-            z-index: 100;
-
-            .background {
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.8);
-            position: fixed;
-            top: 0;
-            right: 0;
-            display: none;
-            }
-
-            &-content {
-            box-sizing: border-box;
-            width: 35%;
-            min-width: 280px;
-            height: 100vh;
-            padding: 0.5rem 1rem;
-            background-color: ${theme.colors.white};
-            color: ${theme.colors.paragraph};
-            position: fixed;
-            top: 0;
-            left: 100%;
-            transition: left 400ms ease;
-
-            &__header {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                padding-bottom: 0.375rem;
-                border-bottom: 1px ${theme.colors.c4} solid;
+            button {
                 font-size: 0.875rem;
-
-                @media (min-width: ${theme.breakpoints.up.large}) {
-                font-size: 1rem;
-                }
-            }
-
-            &-product {
-                font-size: 0.875rem;
-                display: flex;
-                margin-top: 0.9375rem;
-                padding-bottom: 0.75rem;
-                border-bottom: 1px ${theme.colors.c4} solid;
-                width: 100%;
-
-                @media (min-width: ${theme.breakpoints.up.large}) {
-                font-size: 1rem;
-                }
-
-                &__part1 {
-                    width: 30%;
-                    margin-right: 0.625rem;
-
-                    img {
-                        width: 100%;
-                        max-width: 6.25rem;
-                        border-radius: 0.5rem;
-                    }
-                }
-
-                &__part2 {
-                    width: 70%;
-                    margin-right: 0.625rem;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-
-                    &-title {
-                        display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 0.5rem;
-                    }
-
-                    &-option {
-                        margin-bottom: 0.5rem;
-                    }
-
-                    &-quantity {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .quantity {
-                        color: ${theme.colors.paragraph};
-
-                        button {
-                        font-size: 0.875rem;
-                        color: ${theme.colors.paragraph};
-                        padding: 0.25rem 0.5rem;
-                        border: 1px ${theme.colors.c4} solid;
-                        background-color: ${theme.colors.white};
-                        cursor: pointer;
-                        }
-
-                        input {
-                        font-size: 0.875rem;
-                        color: ${theme.colors.paragraph};
-                        padding-top: 0.25rem;
-                        padding-bottom: 0.25rem;
-                        text-align: center;
-                        width: 30px;
-                        border: 1px ${theme.colors.c4} solid;
-                        margin: 0 -6px;
-
-                        &::-webkit-inner-spin-button {
-                            display: none;
-                        }
-
-                        &::-webkit-outer-spin-button {
-                            display: none;
-                        }
-
-                        &:focus {
-                            outline: none;
-                        }
-                        }
-                    }
-
-                    .price {
-                        padding-top: 0.625rem;
-                    }
-                    }
-                }
-                }
-
-                &-subtotal {
-                font-size: 0.875rem;
-                display: flex;
-                justify-content: space-between;
-                margin-top: 1.25rem;
-
-                @media (min-width: ${theme.breakpoints.up.large}) {
-                    font-size: 1rem;
-                }
-                }
-
-                &-payment {
-                text-align: center;
-                margin-top: 1.875rem;
-                }
-
-                .price {
-                color: ${theme.colors.secondary};
-                }
-
-                .bi-x {
-                cursor: pointer;
-                }
-
-                &.show {
-                left: calc(100% - 280px);
-
-                @media all and (min-width: 800px) {
-                    left: calc(100% - 35%);
-                }
-                }
-            }
+                padding: 0.5rem 0.875rem;
             }
         }
     }
@@ -367,12 +190,9 @@ const LayoutsStyle = createGlobalStyle`
         .nav-lg {
             ul {
                 a {
-                    color: ${theme.colors.nav};
+                    color: ${theme.colors.white};
                 }
             }
-        }
-        .bi-cart3 {
-            color: ${theme.colors.nav};
         }
     }
     

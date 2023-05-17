@@ -1,14 +1,14 @@
 const theme = {
     colors: {
-      primary: "#0C5259",
-      secondary: "#F8BE1C",
+      primary: "#2F3290",
+      secondary: "#DE5B69",
       white: "#FFFFFF",
-      nav: "#FFFFFF",
+      nav: "#25313C",
       titleH1: "#0C5259",
       titleH2: "#2F2F2F",
       titleH3: "#0C5259",
       paragraph: "#6D7D8B",
-      button: "#2C2E2D",
+      button: "#DE5B69",
       link: "#2F3130",
       f6: "#f6f6f6",
       c4: "#c4c4c4",
@@ -20,13 +20,13 @@ const theme = {
     },
   
     typography: {
-      primaryFontFamily: "Roboto, Arial, Sans-serif",
+      primaryFontFamily: "Mulish, Arial, Sans-serif",
       navFontSize: "1.1rem",
     },
   
     layout: {
       menuTabWidth: "25px",
-      marginLeftRight: "calc(8% + 15px)",
+      marginLeftRight: "calc(4% + 15px)",
       spaceBetween10: "0.625rem",
       spaceBetween20: "1.25rem",
       spaceBetween30: "1.875rem",
