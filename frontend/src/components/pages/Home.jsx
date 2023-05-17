@@ -75,7 +75,25 @@ function Home() {
                     <img src={Hero} alt=""/>
                 </div>
                 <div className="hero__overlay"></div>
-            </div>{/*
+            </div>
+            <div className="steps-section">
+                <h2>Plan, Organize, and Execute Your Projects.</h2>
+                <div className="steps">
+                    <div className="step">
+                        <div className="order">1</div>
+                        <p>Brainstorm in Mind Maps</p>
+                    </div>
+                    <div className="step">
+                        <div className="order">2</div>
+                        <p>Manage in Project Boards</p>
+                    </div>
+                    <div className="step">
+                        <div className="order">3</div>
+                        <p>Organize in To-Do Lists</p>
+                    </div>
+                </div>
+            </div>
+            {/*
             <CatalogView id="catalogView"/>
             <div className="benefits-one">
                 <div className="benefits-one__image">

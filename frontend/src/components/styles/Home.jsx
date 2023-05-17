@@ -20,14 +20,15 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+    z-index: 1;
     background: url(${HeroBackground}) center center / cover;
     background-color: ${theme.colors.backgroundColor1};
     margin: 0 -0.5rem;
+    padding-bottom: ${theme.layout.spaceBetween90};
     @media (min-width: ${theme.breakpoints.up.large}) {
         flex-direction: row;
         justify-content: space-between;
         margin: 0 -8px;
-        padding-bottom: ${theme.layout.spaceBetween90};
     }
     &__overlay {
         position: absolute;
@@ -134,6 +135,65 @@ body {
         }
         img {
             width: 100%;
+        }
+    }
+
+}
+.steps-section {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: -${theme.layout.spaceBetween90};
+    position: relative;
+    z-index: 9;
+    padding: ${theme.layout.spaceBetween20};
+    background-color: ${theme.colors.white};
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    @media (min-width: ${theme.breakpoints.up.medium}) {
+        width: 60%;
+    }
+    h2 {
+        font-weight: bold;
+        color: ${theme.colors.titleH2};
+        margin-bottom: ${theme.layout.spaceBetween30};
+    }
+    .steps {
+        display: flex;
+        justify-content: space-between;
+        .step {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @media (min-width: ${theme.breakpoints.up.medium}) {
+                width: 30%;
+            }
+            .order {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                font-size: 1.125rem;
+                border-radius: 50%;
+                color: ${theme.colors.white};
+                background-color: ${theme.colors.primary};
+                border: 4px solid ${theme.colors.white};
+                box-shadow: 0 0 10px ${theme.colors.primary};
+                @media (min-width: ${theme.breakpoints.up.medium}) {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.5rem;
+                }
+            }
+            p {
+                font-size: 1rem;
+                color: ${theme.colors.paragraph}
+                @media (min-width: ${theme.breakpoints.up.medium}) {
+                    font-size: 1.25rem;
+                }
+            }
         }
     }
 
