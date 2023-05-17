@@ -14,7 +14,7 @@ const theme = {
       c4: "#c4c4c4",
       transparent: "rgba(0,0,0,0)",
       transparentBackground: "rgba(0,0,0,0.5)",
-      backgroundColor1: "rgba(59,93,79,1)",
+      backgroundColor1: "#2F3290",
       backgroundColor2: "rgba(220,229,228,1)",
       backgroundColor3: "#F2F2F2",
     },

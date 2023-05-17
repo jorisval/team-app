@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import theme from '../utils/Variables';
+import HeroBackground from '../../assets/images/hero-background-image.png'
 
 const fadeIn = keyframes`
   0% {
@@ -18,14 +19,23 @@ body {
 .hero {
     display: flex;
     flex-direction: column;
+    position: relative;
+    background: url(${HeroBackground}) center center / cover;
     background-color: ${theme.colors.backgroundColor1};
     margin: 0 -0.5rem;
     @media (min-width: ${theme.breakpoints.up.large}) {
         flex-direction: row;
         justify-content: space-between;
         margin: 0 -8px;
-        padding-right: ${theme.layout.spaceBetween60};
         padding-bottom: ${theme.layout.spaceBetween90};
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(47,50,144,0.95);
     }
     &__text {
         border-radius: 0.5rem;
@@ -35,9 +45,9 @@ body {
         margin: auto;
         text-align: center;
         @media (min-width: ${theme.breakpoints.up.large}) {
-            padding-top: 8.75rem;
+            padding-top: ${theme.layout.spaceBetween90};
             margin: 0 0 0 ${theme.layout.marginLeftRight};
-            width: 40%;
+            width: 30%;
             max-width: 33rem;
             text-align: unset;
             border-radius: 0;
@@ -69,34 +79,57 @@ body {
             @media (min-width: ${theme.breakpoints.up.large}) {
                 justify-content: left;
             }
-            .cta-button {
-                margin-right: 0.9375rem;
-                color: ${theme.colors.white};
-                background-color: ${theme.colors.transparent};
-                border: 2px solid ${theme.colors.white};
-                font-weight: 300;
-                &.view {
-                    color: ${theme.colors.button};
-                    background-color: ${theme.colors.secondary};
-                    border: 2px solid ${theme.colors.secondary};
+            form {
+                display: flex;
+                justify-content: center;
+                width: 80%;
+                @media (min-width: ${theme.breakpoints.up.large}) {
+                    justify-content: left;
                 }
-                :hover {
-                    color: ${theme.colors.white};
-                    background-color: ${theme.colors.button};
-                    border: 2px solid ${theme.colors.button};
+            }
+
+            input[type="email"] {
+                font-size: 0.875rem;
+                color: ${theme.colors.paragraph};
+                padding: 0.5rem 0.75rem;
+                border: 2px ${theme.colors.button} solid;
+                border-radius: 4px 0 0 4px;
+                width: 65%;
+
+                @media (min-width: ${theme.breakpoints.up.medium}) {
+                    padding: 0.75rem 1rem;
+                    font-size: 1rem;
+                }
+            }
+
+            input[type="submit"] {
+                font-size: 0.875rem;
+                color: ${theme.colors.white};
+                background-color: ${theme.colors.button};
+                padding: 0.5rem 0.75rem;
+                border: 2px ${theme.colors.button} solid;
+                border-radius: 0 4px 4px 0;
+                margin-left: -5px;
+
+                @media (min-width: ${theme.breakpoints.up.medium}) {
+                    padding: 0.75rem 1rem;
+                    font-size: 1rem;
                 }
             }
         }
 
     }
     &__image {
+        z-index: 2;
         margin: auto;
+        max-width: 90%;
+        padding-top: ${theme.layout.spaceBetween30};
         @media (min-width: ${theme.breakpoints.up.medium}) {
             max-width: 60%;
         }
         @media (min-width: ${theme.breakpoints.up.large}) {
             max-width: 50%;
-            padding-top: 8.75rem;
+            padding-top: ${theme.layout.spaceBetween90};
             margin: none;
         }
         img {
