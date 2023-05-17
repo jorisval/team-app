@@ -13,7 +13,7 @@ const fadeIn = keyframes`
 const LayoutsStyle = createGlobalStyle`
     body {
         font-familly: ${theme.typography.primaryFontFamily};
-        background-color: ${theme.colors.backgroundColor3};
+        background-color: ${theme.colors.white};
     }
     p {
         font-size: 1rem;
@@ -205,8 +205,7 @@ const LayoutsStyle = createGlobalStyle`
         margin: 0 -0.5rem;
         margin-top: ${theme.layout.spaceBetween90};
         color: ${theme.colors.paragraph};
-        border-top: 1px rgba(12, 82, 89, 0.20) solid;
-        background-color: ${theme.colors.backgroundColor2};
+        background-color: ${theme.colors.white};
 
         &__part-1 {
             display: flex;
@@ -250,6 +249,10 @@ const LayoutsStyle = createGlobalStyle`
                 }
             }
 
+            .bi-instagram, .bi-facebook, .bi-twitter {
+                color: ${theme.colors.titleH3};
+            }
+
             form {
                 display: flex;
                 width: 100%;
@@ -260,7 +263,7 @@ const LayoutsStyle = createGlobalStyle`
                 color: ${theme.colors.paragraph};
                 padding: 0.25rem 0.5rem;
                 border: 2px ${theme.colors.button} solid;
-                border-radius: 2rem 0 0 2rem;
+                border-radius: 4px 0 0 4px;
                 width: 65%;
 
                 @media (min-width: ${theme.breakpoints.up.medium}) {
@@ -275,7 +278,7 @@ const LayoutsStyle = createGlobalStyle`
                 background-color: ${theme.colors.button};
                 padding: 0.25rem 0.5rem;
                 border: 2px ${theme.colors.button} solid;
-                border-radius: 0 2rem 2rem 0;
+                border-radius: 0 4px 4px 0;
                 margin-left: -5px;
 
                 @media (min-width: ${theme.breakpoints.up.medium}) {

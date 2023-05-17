@@ -12,6 +12,9 @@ const fadeIn = keyframes`
 
 export const HomeContainer = styled.div`
 animation: ${fadeIn} 1s ease-in;
+body {
+    background-color: ${theme.colors.backgroundColor3};
+}
 .hero {
     display: flex;
     flex-direction: column;

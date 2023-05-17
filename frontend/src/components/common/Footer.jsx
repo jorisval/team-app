@@ -51,28 +51,44 @@ function Footer() {
                     <img src={Logo} alt=""/>
                     <ul>
                         <li><a href="#b"><i className="bi bi-instagram"></i> Instagram</a></li>
-                        <li><a href="#b"><i className="bi bi-whatsapp"></i> Whatsapp</a></li>
+                        <li><a href="#b"><i className="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="#b"><i className="bi bi-twitter"></i> Twitter</a></li>
+                    </ul>
+                </div>
+                <div className="products">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#b"><i className="bi"></i>Desk Booking</a></li>
+                        <li><a href="#b"><i className="bi"></i>Visitor Management</a></li>
+                        <li><a href="#b"><i className="bi"></i>Modern Ticketing</a></li>
+                        <li><a href="#b"><i className="bi"></i>Room Scheduling</a></li>
+                        <li><a href="#b"><i className="bi"></i>Facilities Service </a></li>
+                        <li><a href="#b"><i className="bi"></i>Marketplace</a></li>
+                    </ul>
+                </div>
+                <div className="about">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#b"><i className="bi"></i>Resources</a></li>
+                        <li><a href="#b"><i className="bi"></i>Our Story</a></li>
+                        <li><a href="#b"><i className="bi"></i>Our Team</a></li>
+                        <li><a href="#b"><i className="bi"></i>Careers</a></li>
+                        <li><a href="#b"><i className="bi"></i>Security</a></li>
                     </ul>
                 </div>
                 <div className="support">
                     <h3>Contact & Support</h3>
                     <ul>
-                        <li><a href="#b"><i className="bi"></i>+33 7 80 70 82 87</a></li>
-                        <li><a href="#b"><i className="bi"></i>info@homi.com</a></li>
-                        <li><a href="#b"><i className="bi"></i>Lun-Ven 9H00-18H00</a></li>
-                    </ul>
-                </div>
-                <div className="legal">
-                    <h3>Legal information</h3>
-                    <ul>
-                        <li><a href="#b"><i className="bi"></i>General Sales Conditions</a></li>
+                        <li><a href="#b"><i className="bi"></i>1 (800) 751-4512</a></li>
+                        <li><a href="#b"><i className="bi"></i>support@teamapp.com</a></li>
+                        <br/>
                         <li><a href="#b"><i className="bi"></i>Privacy Policy</a></li>
-                        <li><a href="#b"><i className="bi"></i>Return & Fund Policy</a></li>
+                        <li><a href="#b"><i className="bi"></i>Terms of Service</a></li>
                     </ul>
                 </div>
                 <div className="newsletter">
                     <h3>Newsleter</h3>
-                    <p>Subscribe to our newsletter and receive your welcome offer !</p>
+                    <p>Sign up for our newsletter to stay up to date with what's new!</p>
                     <form onSubmit={handleSubmit}>
                         <input type="email" id="email" name="email" placeholder="Email"/>
                         <input type="submit" value="Sign up"/>
@@ -80,7 +96,7 @@ function Footer() {
                 </div>
             </div>
             <div className="footer__part-2">
-                <p>© 2023 Homi | All rights reserved.</p>
+                <p>© 2023 Teamapp. All rights reserved.</p>
             </div>
         </div>
     );
