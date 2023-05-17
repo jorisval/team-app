@@ -198,64 +198,7 @@ body {
     }
 
 }
-.benefits-one {
-    margin: 0 ${theme.layout.marginLeftRight};
-    margin-top: ${theme.layout.spaceBetween90};
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    @media (min-width: ${theme.breakpoints.up.medium}) {
-        flex-direction: row-reverse;
-        align-items: center;
-    }
-    &__image {
-        width: 100%;
-        margin-bottom: ${theme.layout.spaceBetween20};
-        @media (min-width: ${theme.breakpoints.up.medium}) {
-            width: 35%;
-            max-width: 43.75rem;
-        }
-        img {
-            width: 100%;
-        }
-    }
-    &__text {
-        text-align: left;
-        @media (min-width: ${theme.breakpoints.up.medium}) {
-            width: 60%;
-            max-width: 41.25rem;
-        }
-        p {
-            color: ${theme.colors.paragraph};
-            font-size: 1rem;
-            line-height: 1.625rem;
-            margin-bottom: ${theme.layout.spaceBetween20};
-        }
-        .four-benefits {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            div {
-                width: 48%;
-                margin-top: 1rem;
-                @media (min-width: ${theme.breakpoints.up.medium}) {
-                    width: 40%;
-                }
-                span {
-                    font-size: 1.5rem;
-                }
-                p {
-                    margin-top: 0;
-                }
-                h4 {
-                    font-weight: 400;
-                    margin: 0.5rem 0;
-                }
-            }
-        }
-    }
-}
-.benefits-two {
+.benefits-one, .benefits-three {
     margin: 0 ${theme.layout.marginLeftRight};
     margin-top: ${theme.layout.spaceBetween90};
     display: flex;
@@ -279,8 +222,11 @@ body {
     &__text {
         text-align: left;
         @media (min-width: ${theme.breakpoints.up.medium}) {
-            width: 35%;
+            width: 40%;
             max-width: 41.25rem;
+        } 
+        h2 {
+            color: ${theme.colors.titleH2};
         }
         p {
             color: ${theme.colors.paragraph};
@@ -288,23 +234,57 @@ body {
             line-height: 1.625rem;
             margin-bottom: ${theme.layout.spaceBetween20};
         }
-        .four-benefits {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            div {
-                display: flex;
-                width: 48%;
-                margin: 1.25rem 0;
-                span {
-                    font-size: 1rem;
-                    margin-top: 0.25rem;
-                }
-                p {
-                    margin: 0;
-                    margin-left: 0.5rem;
-                }
-            }
+        a {
+            color: ${theme.colors.link};
+            font-size: 1rem;
+            line-height: 1.625rem;
+            margin-bottom: ${theme.layout.spaceBetween20};
+            text-decoration: none;
+        }
+    }
+}
+.benefits-two {
+    margin: 0 ${theme.layout.marginLeftRight};
+    margin-top: ${theme.layout.spaceBetween90};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: ${theme.breakpoints.up.medium}) {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    &__image {
+        width: 100%;
+        margin-bottom: ${theme.layout.spaceBetween20};
+        @media (min-width: ${theme.breakpoints.up.medium}) {
+            width: 60%;
+            max-width: 43.75rem;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    &__text {
+        text-align: left;
+        @media (min-width: ${theme.breakpoints.up.medium}) {
+            width: 40%;
+            max-width: 41.25rem;
+        } 
+        h2 {
+            color: ${theme.colors.titleH2};
+        }
+        p {
+            color: ${theme.colors.paragraph};
+            font-size: 1rem;
+            line-height: 1.625rem;
+            margin-bottom: ${theme.layout.spaceBetween20};
+        }
+        a {
+            color: ${theme.colors.link};
+            font-size: 1rem;
+            line-height: 1.625rem;
+            margin-bottom: ${theme.layout.spaceBetween20};
+            text-decoration: none;
         }
     }
 }

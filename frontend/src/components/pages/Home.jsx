@@ -2,12 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { HeaderContext } from "../utils/context";
 import Hero from "../../assets/images/team-hero-image.png";
 import ThankYouPopup from "../pages/Thank-you-subscribe";
-//import BeneFirst from "../../assets/images/benefits1-large.png";
-//import BeneSecond from "../../assets/images/benefits2-large.png";
+import BeneFirst from "../../assets/images/team-section-one-image.png";
+import BeneSecond from "../../assets/images/team-section-two-image.png";
+import BeneThird from "../../assets/images/team-section-three-image.png";
 //import PostImage1 from "../../assets/images/nordic.png";
 //import PostImage2 from "../../assets/images/kruzo.png";
 //import PostImage3 from "../../assets/images/ergonomic.png";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HomeContainer } from "../styles/Home";
 
 
@@ -93,38 +94,15 @@ function Home() {
                     </div>
                 </div>
             </div>
-            {/*
-            <CatalogView id="catalogView"/>
             <div className="benefits-one">
                 <div className="benefits-one__image">
                     <img src={BeneFirst} alt=""/>
                 </div>
                 <div className="benefits-one__text">
-                    <h2>blog Choose Us</h2>
-                    <p>Recherche de produits, recherche de marchés inexploités, copywriting, boutique shopify, vidéos pour Facebook ads et Tiktok ads etc... Nous nous occupons de tout pour vous.
-                    Notre objectif est de vous décharger de toutes ces tâches pour vous laisser vous occuper de l'essentiel et ainsi faire exploser votre business. </p>
-                    <div className="four-benefits">
-                        <div className="four-benefits__first">
-                            <span className="bi bi-stopwatch"></span>
-                            <h4>Fast & Free Shiping</h4>
-                            <p>Recherche produits, recherche de marchés inexploités, copywriting, boutique shopify</p>
-                        </div>
-                        <div className="four-benefits__second">
-                            <span className="bi bi-bag-fill"></span>
-                            <h4>Easy to shop</h4>
-                            <p>Recherche produits, recherche de marchés inexploités, copywriting, boutique shopify</p>
-                        </div>
-                        <div className="four-benefits__third">
-                            <span className="bi bi-wechat"></span>
-                            <h4>24/7 Support</h4>
-                            <p>Recherche produits, recherche de marchés inexploités, copywriting, boutique shopify</p>
-                        </div>
-                        <div className="four-benefits__fourth">
-                            <span className="bi bi-arrow-repeat"></span>
-                            <h4>Hassle Free Returns</h4>
-                            <p>Recherche produits, recherche de marchés inexploités, copywriting, boutique shopify</p>
-                        </div>
-                    </div>
+                    <h2>Organize & Manage Tasks & To-Do Lists</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    <Link to="/blog">Learn more <span className="bi bi-arrow-right"></span></Link>
                 </div>
             </div>
             <div className="benefits-two">
@@ -132,30 +110,22 @@ function Home() {
                     <img src={BeneSecond} alt=""/>
                 </div>
                 <div className="benefits-two__text">
-                    <h2>We Help You Make Modern Interior Design</h2>
-                    <p>Recherche de produits, recherche de marchés inexploités, copywriting, boutique shopify, 
-                        vidéos pour Facebook ads et Tiktok ads etc... Nous nous occupons de tout pour vous.</p>
-                    <div className="four-benefits">
-                        <div className="four-benefits__first">
-                            <span className="bi bi-check2-circle"></span>
-                            <p>Recherche produits, recherche de marchés</p>
-                        </div>
-                        <div className="four-benefits__second">
-                            <span className="bi bi-check2-circle"></span>
-                            <p>Recherche produits, recherche de marchés</p>
-                        </div>
-                        <div className="four-benefits__third">
-                            <span className="bi bi-check2-circle"></span>
-                            <p>Recherche produits, recherche de marchés</p>
-                        </div>
-                        <div className="four-benefits__fourth">
-                            <span className="bi bi-check2-circle"></span>
-                            <p>Recherche produits, recherche de marchés</p>
-                        </div>
-                    </div>
-                    <Link to='/catalog' className="cta-button">Explore</Link>
+                    <h2>Share Tasks Online</h2>
+                    <p>Share your to-do lists, mind maps, and projects online for free with your teammates, and collaborate together in real-time, across any device. Communicate with your team via built-in free and unlimited chat and video conferencing on every single project.</p>
+                    <Link to="/blog">Learn more <span className="bi bi-arrow-right"></span></Link>
                 </div>
             </div>
+            <div className="benefits-three">
+                <div className="benefits-three__image">
+                    <img src={BeneThird} alt=""/>
+                </div>
+                <div className="benefits-three__text">
+                    <h2>Manage Team Tasks</h2>
+                    <p>Plan, organize, and prioritize upcoming tasks in the team roadmap. Taskade lets you automate your workflows and get work done.</p>
+                    <Link to="/blog">Learn more <span className="bi bi-arrow-right"></span></Link>
+                </div>
+            </div>
+            {/*
             <div className="blog">
                 <div className="blog__posts">
                     <div className="blog__post">
