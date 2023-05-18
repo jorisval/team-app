@@ -21,7 +21,7 @@ function Home() {
     useEffect(() => {
         setActivePage('home');
     }, [setActivePage]);
-    const [activeTestimonial, setActiveTestimonial] = useState(0);
+    const [activeTestimonial, setActiveTestimonial] = useState(-1);
     const testimonialRef = useRef();
     const testimonialsData = useMemo(() => [
         {
@@ -81,10 +81,17 @@ function Home() {
     }, [testimonialsData]);
 
     useEffect(() => {
-        if(testimonialsRefs[activeTestimonial]?.current) {
-            testimonialsRefs[activeTestimonial].current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        if (activeTestimonial >= 0) {
+            const element = testimonialsRefs[activeTestimonial]?.current;
+            if(element) {
+                const rect = element.getBoundingClientRect();
+                const isInView = rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+                if (!isInView) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                }
+            }
         }
-    }, [activeTestimonial, testimonialsRefs]);    
+    }, [activeTestimonial, testimonialsRefs]);   
 
     const handleTestimonialScroll = (direction) => {
         if (direction === 'left') {
@@ -206,7 +213,7 @@ function Home() {
                     <Link to="/blog">Learn more <span className="bi bi-arrow-right"></span></Link>
                 </div>
             </div>
-            <div className="cta-section">
+            <div className="cta-section" id="cta-section">
                 <h2>Get Work Done. Faster + Smarter.</h2>
                 <div className="cta-row">
                     <form onSubmit={handleSubmit}>

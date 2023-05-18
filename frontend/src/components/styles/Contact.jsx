@@ -20,7 +20,7 @@ export const ContactContainer = styled.div`
             padding-bottom: ${theme.layout.spaceBetween10};
         }
         h1 {
-            color: ${theme.colors.titleH1};
+            color: ${theme.colors.primary};
             font-size: 1.25rem;
             font-weight: 800;
             @media (min-width: ${theme.breakpoints.up.medium}) {
@@ -90,7 +90,7 @@ export const ContactContainer = styled.div`
                 padding: 0.375rem 1.625rem;
                 background-color: ${theme.colors.button};
                 width: unset;
-                border-radius: 2rem;
+                border-radius: 5px;
                 border-style: none;
                 display: inline-block;
                 cursor: pointer;

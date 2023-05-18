@@ -65,7 +65,7 @@ export const PostContainer = styled.div`
         padding-bottom: ${theme.layout.spaceBetween90};
     }
     h1 {
-        color: ${theme.colors.titleH1};
+        color: ${theme.colors.primary};
         font-size: 1.25rem;
         font-weight: 700;
         margin-bottom: ${theme.layout.spaceBetween30};
@@ -124,7 +124,7 @@ export const PostContainer = styled.div`
             color: ${theme.colors.white};
             padding: 0.375rem 1.625rem;
             background-color: ${theme.colors.button};
-            border-radius: 2rem;
+            border-radius: 5px;
             border-style: none;
             display: inline-block;
             margin: ${theme.layout.spaceBetween10} 0;

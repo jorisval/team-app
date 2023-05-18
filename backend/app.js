@@ -16,6 +16,7 @@ mongoose.connect(process.env.MONGODB_URI,
 
 // Middleware for parsing JSON and URL-encoded form data
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 app.use((req, res, next) => {
