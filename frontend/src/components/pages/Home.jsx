@@ -67,9 +67,6 @@ function Home() {
                             <input type="email" id="email" name="email" placeholder="Email"/>
                             <input type="submit" value="Sign up"/>
                         </form>
-                        {showThankYouPopup && (
-                            <ThankYouPopup onClose={handleCloseThankYouPopup} />
-                        )}
                     </div>
                 </div>
                 <div className="hero__image">
@@ -125,41 +122,16 @@ function Home() {
                     <Link to="/blog">Learn more <span className="bi bi-arrow-right"></span></Link>
                 </div>
             </div>
-            {/*
-            <div className="blog">
-                <div className="blog__posts">
-                    <div className="blog__post">
-                        <div className="image">
-                            <img src={PostImage1} alt=""/>
-                        </div>
-                        <div>
-                        <h4>Nordic Chair</h4>
-                        <p>Nous maîtrisons les meilleurs process et les meilleures stratégies des tops du domaine</p>
-                            <Link to='/blog'>Read more</Link>
-                        </div>
-                    </div>
-                    <div className="blog__post">
-                    <div className="image">
-                            <img src={PostImage2} alt=""/>
-                        </div>
-                        <div>
-                            <h4>Kurozo Aero Chair</h4>
-                        <p>Nous maîtrisons les meilleurs process et les meilleures stratégies des tops du domaine</p>
-                            <Link to='/blog'>Read more</Link>
-                        </div>
-                    </div>
-                    <div className="blog__post">
-                    <div className="image">
-                            <img src={PostImage3} alt=""/>
-                        </div>
-                        <div>
-                        <h4>Ergonomic Chair</h4>
-                        <p>Nous maîtrisons les meilleurs process et les meilleures stratégies des tops du domaine</p>
-                            <Link to='/blog'>Read more</Link>
-                        </div>
-                    </div>
+            <div className="cta-section">
+                <h2>Get Work Done. Faster + Smarter.</h2>
+                <div className="cta-row">
+                    <form onSubmit={handleSubmit}>
+                        <input type="email" id="email" name="email" placeholder="Email"/>
+                        <input type="submit" value="Sign up"/>
+                    </form>
                 </div>
-            </div>*/}
+            </div>
+            {showThankYouPopup && (<ThankYouPopup onClose={handleCloseThankYouPopup} />)}
         </HomeContainer>
     )
 }

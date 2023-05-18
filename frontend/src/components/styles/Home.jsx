@@ -288,45 +288,58 @@ body {
         }
     }
 }
-.blog {
-    margin: 0 ${theme.layout.marginLeftRight};
-    margin-top: ${theme.layout.spaceBetween90};
-    &__posts {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: ${theme.layout.spaceBetween30} ${theme.layout.marginLeftRight};
+    margin: -0.5rem;
+    margin-top: ${theme.layout.spaceBetween60};
+    background-color: ${theme.colors.primary};
+    h2 {
+        text-align: center;
+        color: ${theme.colors.white};
+        margin-bottom: ${theme.layout.spaceBetween30};
     }
-    &__post {
+    .cta-row {
         display: flex;
-        width: 80%;
-        min-width: 18.75rem;
-        margin: 0 1rem ${theme.layout.spaceBetween30} 0;
-        @media (min-width: ${theme.breakpoints.up.medium}) {
-            width: 30%;
-        }
-        .image {
-            width: 100%;
-            min-width: 6.25rem;
-            img {
-                width: 100%;
+        justify-content: center;
+        margin-bottom: ${theme.layout.spaceBetween30};
+        form {
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            @media (min-width: ${theme.breakpoints.up.medium}) {
+                width: 40%;
             }
         }
-        h4 {
-            font-weight: 400;
-            margin: 0;
-        }
-        p {
+
+        input[type="email"] {
+            font-size: 0.875rem;
             color: ${theme.colors.paragraph};
-            font-size: 1rem;
-            line-height: 1.5rem;
-            margin: 0.5rem 0;
+            padding: 0.5rem 0.75rem;
+            border: 2px ${theme.colors.button} solid;
+            border-radius: 4px 0 0 4px;
+            width: 65%;
+
+            @media (min-width: ${theme.breakpoints.up.medium}) {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+            }
         }
-        a {
-            color: ${theme.colors.paragraph};
-            font-size: 1rem;
-            text-decoration: none;
-            :hover {
-                color: ${theme.colors.secondary};
+
+        input[type="submit"] {
+            font-size: 0.875rem;
+            color: ${theme.colors.white};
+            background-color: ${theme.colors.button};
+            padding: 0.5rem 0.75rem;
+            border: 2px ${theme.colors.button} solid;
+            border-radius: 0 4px 4px 0;
+            margin-left: -5px;
+
+            @media (min-width: ${theme.breakpoints.up.medium}) {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
             }
         }
     }
