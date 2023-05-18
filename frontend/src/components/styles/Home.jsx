@@ -344,4 +344,127 @@ body {
         }
     }
 }
+.testimonials-section {
+    display: flex;
+    flex-direction: column;
+    padding: ${theme.layout.spaceBetween30} ${theme.layout.marginLeftRight};
+    margin: -0.5rem;
+    background-color: ${theme.colors.primary};
+    h2 {
+        text-align: center;
+        color: ${theme.colors.white};
+        margin-bottom: ${theme.layout.spaceBetween30};
+    }
+    .testimonials {
+        display: flex;
+        padding: ${theme.layout.spaceBetween20};
+        overflow-x: auto;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+        
+        &::-webkit-scrollbar { /* Chrome, Safari, Edge */
+            display: none;
+        }
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            flex-grow: 0;
+            margin-left: ${theme.layout.spaceBetween20};
+            padding: ${theme.layout.spaceBetween30};
+            width: 200px;
+            background-color: ${theme.colors.white};
+            border-radius: 10px;
+            @media (min-width: ${theme.breakpoints.up.medium}) {
+                width: 300px;
+            }
+            &.active {
+                box-shadow: 0 0 20px ${theme.colors.white};
+            }
+            &__header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: ${theme.layout.spaceBetween20};
+                .customer {
+                    &-info {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            margin-right: 5px;
+                        }
+                    }
+                    &-name {
+                        font-size: 0.875rem;
+                        font-weight: bold;
+                        color: ${theme.colors.paragraph};
+                        margin: 0;
+                        margin-bottom: 4px;
+                    }
+                    &-company {
+                        font-size: 0.875rem;
+                        color: ${theme.colors.paragraph};
+                        margin: 0;
+                    }
+                }
+                .coma {
+                    img {
+                        width: 20px;
+                    }
+                }
+            }
+            &__body{
+                font-size: 0.875rem;
+                color: ${theme.colors.paragraph};
+                margin: 0;
+                @media (min-width: ${theme.breakpoints.up.medium}) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .testimonial-directions {
+        margin-top: ${theme.layout.spaceBetween20};
+        margin-bottom: ${theme.layout.spaceBetween30};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bi-chevron-left {
+            color: ${theme.colors.white};
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 1rem;
+            @media (min-width: ${theme.breakpoints.up.medium}) {
+                font-size: 1.25rem;
+            }
+        }
+        .bi-chevron-right {
+            color: ${theme.colors.white};
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 1rem;
+            @media (min-width: ${theme.breakpoints.up.medium}) {
+                font-size: 1.25rem;
+            }
+        }
+        .testimonial {
+            &-circles {
+                display: flex;
+                justify-content: center;
+                .bi {
+                    font-size: 0.875rem;
+                    color: ${theme.colors.white};
+                    margin-right: 4px;
+                    cursor: pointer;
+                    @media (min-width: ${theme.breakpoints.up.medium}) {
+                        font-size: 1.125rem;
+                    }
+                }
+            }
+        }
+    }
+}
 `;

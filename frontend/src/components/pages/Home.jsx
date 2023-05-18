@@ -1,12 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef, createRef, useMemo } from "react";
 import { HeaderContext } from "../utils/context";
 import Hero from "../../assets/images/team-hero-image.png";
 import ThankYouPopup from "../pages/Thank-you-subscribe";
 import BeneFirst from "../../assets/images/team-section-one-image.png";
 import BeneSecond from "../../assets/images/team-section-two-image.png";
 import BeneThird from "../../assets/images/team-section-three-image.png";
-//import PostImage1 from "../../assets/images/nordic.png";
-//import PostImage2 from "../../assets/images/kruzo.png";
+import CustomerImage1 from "../../assets/images/review-image-1.png";
+import CustomerImage2 from "../../assets/images/review-image-2.png";
+import CustomerImage3 from "../../assets/images/review-image-3.png";
+import CustomerImage4 from "../../assets/images/review-image-1.png";
+import Comas from "../../assets/images/review-comas.png";
 //import PostImage3 from "../../assets/images/ergonomic.png";
 import { Link } from "react-router-dom";
 import { HomeContainer } from "../styles/Home";
@@ -18,6 +21,87 @@ function Home() {
     useEffect(() => {
         setActivePage('home');
     }, [setActivePage]);
+    const [activeTestimonial, setActiveTestimonial] = useState(0);
+    const testimonialRef = useRef();
+    const testimonialsData = useMemo(() => [
+        {
+            name: "Ralph Edwards",
+            company: "IBM",
+            image: CustomerImage1,
+            comment: "The study was repeated with three brands of hand sanitizers containing 55%, 85%, and 95% ethanol. Their blood alcohol level was measured by gas chromatography 30"
+        },
+        {
+            name: "Robert Fox",
+            company: "Louis Vuitton",
+            image: CustomerImage2,
+            comment: "So yes, the alcohol (ethanol) in hand sanitizers can be absorbed through the skin, but no, it would not cause intoxication."
+        },
+        {
+            name: "Annette Black",
+            company: "Starbucks",
+            image: CustomerImage3,
+            comment: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart."
+        },
+        {
+            name: "Marc A.",
+            company: "CTO Paypal",
+            image: CustomerImage4,
+            comment: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart."
+        },
+        {
+            name: "Ralph Edwards",
+            company: "IBM",
+            image: CustomerImage1,
+            comment: "The study was repeated with three brands of hand sanitizers containing 55%, 85%, and 95% ethanol. Their blood alcohol level was measured by gas chromatography 30"
+        },
+        {
+            name: "Robert Fox",
+            company: "Louis Vuitton",
+            image: CustomerImage2,
+            comment: "So yes, the alcohol (ethanol) in hand sanitizers can be absorbed through the skin, but no, it would not cause intoxication."
+        },
+        {
+            name: "Annette Black",
+            company: "Starbucks",
+            image: CustomerImage3,
+            comment: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart."
+        },
+        {
+            name: "Marc A.",
+            company: "CTO Paypal",
+            image: CustomerImage4,
+            comment: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart."
+        }
+    ], []);
+    
+    const [testimonialsRefs, setTestimonialsRefs] = useState([]);
+
+    useEffect(() => {
+        setTestimonialsRefs((refs) => Array(testimonialsData.length).fill().map((_, i) => refs[i] || createRef()));
+    }, [testimonialsData]);
+
+    useEffect(() => {
+        if(testimonialsRefs[activeTestimonial]?.current) {
+            testimonialsRefs[activeTestimonial].current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+    }, [activeTestimonial, testimonialsRefs]);    
+
+    const handleTestimonialScroll = (direction) => {
+        if (direction === 'left') {
+            if (activeTestimonial > 0) {
+                setActiveTestimonial(activeTestimonial - 1);
+            }
+        } else {
+            if (activeTestimonial < testimonialsData.length - 1) {
+                setActiveTestimonial(activeTestimonial + 1);
+            }
+        }
+    };
+
+    const handleTestimonialCircleClick = (index) => {
+        setActiveTestimonial(index);
+    };
+    
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -129,6 +213,43 @@ function Home() {
                         <input type="email" id="email" name="email" placeholder="Email"/>
                         <input type="submit" value="Sign up"/>
                     </form>
+                </div>
+            </div>
+            <div className="testimonials-section">
+                <h2>What the people say about us</h2>
+                <div className="testimonials" ref={testimonialRef}>
+                    {testimonialsData.map((testimonial, index) => {
+                        return(
+                            <div className={`testimonial ${index === activeTestimonial ? 'active' : ''}`} key={index} ref={testimonialsRefs[index]}>
+                                <div className="testimonial__header">
+                                    <div className="customer-info">
+                                        <img src={testimonial.image} alt="" />
+                                        <div>
+                                            <p className="customer-name">{testimonial.name}</p>
+                                            <p className="customer-company">{testimonial.company}</p>
+                                        </div>
+                                    </div>
+                                    <div className="coma">
+                                        <img src={Comas} alt="" />
+                                    </div>
+                                </div>
+                                <div className="testimonial__body">{testimonial.comment}</div>
+                            </div>
+                        )
+                    })}
+                </div>
+                <div className="testimonial-directions">
+                    <span className="bi bi-chevron-left" onClick={() => handleTestimonialScroll('left')}></span>
+                    <div className="testimonial-circles">
+                        {testimonialsData.map((_, index) => (
+                            <div
+                                className={`bi ${index === activeTestimonial ? 'bi-record-circle' : 'bi-circle'}`}
+                                onClick={() => handleTestimonialCircleClick(index)}
+                                key={index}
+                            />
+                        ))}
+                    </div>
+                    <span className="bi bi-chevron-right" onClick={() => handleTestimonialScroll('right')}></span>
                 </div>
             </div>
             {showThankYouPopup && (<ThankYouPopup onClose={handleCloseThankYouPopup} />)}
