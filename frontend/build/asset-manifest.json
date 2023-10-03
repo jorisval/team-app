@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/static/js/main.fa13648c.js",
+    "static/media/hero-background-image.png": "/static/media/hero-background-image.1dc58442cbd7433ceba0.png",
+    "static/media/team-hero-image.png": "/static/media/team-hero-image.cdd532b69155484201a4.png",
+    "static/media/team-section-two-image.png": "/static/media/team-section-two-image.71242b9edc17c5efdf51.png",
+    "static/media/team-section-three-image.png": "/static/media/team-section-three-image.43e7d29f4800fa7cb9ba.png",
+    "static/media/team-section-one-image.png": "/static/media/team-section-one-image.5bd9eb58eed21850cbce.png",
+    "static/media/404-error-pana.svg": "/static/media/404-error-pana.5f4733a74694a2ac9cda6cd3ded4ce69.svg",
+    "index.html": "/index.html",
+    "main.fa13648c.js.map": "/static/js/main.fa13648c.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fa13648c.js"
+  ]
+}
