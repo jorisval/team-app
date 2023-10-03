@@ -13,6 +13,7 @@ import Comas from "../../assets/images/review-comas.png";
 //import PostImage3 from "../../assets/images/ergonomic.png";
 import { Link } from "react-router-dom";
 import { HomeContainer } from "../styles/Home";
+import { BASE_URL } from '../../config';
 
 
 function Home() {
@@ -121,7 +122,7 @@ function Home() {
         }
     
         try {
-            const response = await fetch("http://localhost:3000/api/newsletter", {
+            const response = await fetch(`${BASE_URL}/api/newsletter`, {
                 method: "POST",
                 body: searchParams,
                 headers: {
