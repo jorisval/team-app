@@ -14,7 +14,11 @@ const allowedDomains = [
     'http://localhost:3001',
     'http://localhost:3001/',
     'https://team-app.vercel.app/',
-    'https://team-app.vercel.app'
+    'https://team-app.vercel.app',
+    'https://team-app-30c0cf1c2df1.herokuapp.com/',
+    'https://team-app-30c0cf1c2df1.herokuapp.com',
+    'http://team-app-30c0cf1c2df1.herokuapp.com/',
+    'http://team-app-30c0cf1c2df1.herokuapp.com'
 ];
   
 
